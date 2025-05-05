@@ -67,6 +67,9 @@ closeDBConnection($conn);
     </style>
 </head>
 <body>
+    <div>
+        <a href="test-main.php">назад</a>
+    </div>
     <div class="profile-container">
         <h1>Ваш профиль</h1>
         

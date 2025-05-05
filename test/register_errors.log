@@ -186,3 +186,16 @@
 2025-05-03 17:07:41 - Database connection closed
 2025-05-03 17:07:41 - ----- End of Request -----
 
+----- New Request -----
+2025-05-05 17:51:36 - Starting registration process
+2025-05-05 17:51:36 - Config loaded
+2025-05-05 17:51:36 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-05 17:51:36 - Database connection established
+2025-05-05 17:51:36 - User already exists
