@@ -4,7 +4,7 @@
             <div class="first-panel">
                 <nav>
                     <ul>
-                        <li><a href="#">Главная</a></li>
+                        <li><a href="test-main.php">Главная</a></li>
                         <li><a href="#">Футбол</a></li>
                         <li><a href="#">Хоккей</a></li>
                         <li><a href="#">Баскетбол</a></li>

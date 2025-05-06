@@ -157,3 +157,35 @@ nav a:hover::after {
     font-size: 24px;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .header-actions {
+        display: none;
+    }
+}:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #dc2626;
+    --text-color: #1f2937;
+    --light-color: #f8fafc;
+    --gray-color: #e5e7eb;
+    --primary-color: #1e3a8a;
+    --secondary-color: #dc2626;
+    --text-color: #1f2937;
+    --light-color: #f8fafc;
+    --dark-color: #111827;
+    --gray-color: #6b7280;
+}
+* {
+    margin: 0px 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{line-height:1.6;}

@@ -27,11 +27,11 @@ closeDBConnection($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль | SportNews</title>
     <style>
+        @import "header.css";
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
+           
             background-color: #f3f4f6;
         }
         .profile-container {
@@ -67,9 +67,7 @@ closeDBConnection($conn);
     </style>
 </head>
 <body>
-    <div>
-        <a href="test-main.php">назад</a>
-    </div>
+    <?php include ("header.php");?>
     <div class="profile-container">
         <h1>Ваш профиль</h1>
         
