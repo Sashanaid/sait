@@ -213,24 +213,28 @@
                 padding: 30px;
             }
         }
-        .main_href{
-            display: flex;
-            position:absolute;
-            top:10px;
-            left:10px;
-            width: 50px;
-            height: 50px;
-            border: none;
-            outline: none;
-            color: #fff;
-            background: #111;
-            cursor: pointer;
-            z-index: 0;
-            border-radius: 10px;
-            justify-content: center;
-            align-items: center;
+
+        .glow-on-hover {
+        justify-content: center;
+    align-items: center;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        text-align: center;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        z-index: 0;
+        border-radius: 10px;
         }
-        .main_href:before {
+
+        .glow-on-hover:before {
             content: '';
             background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
             position: absolute;
@@ -247,19 +251,19 @@
             border-radius: 10px;
         }
 
-        .main_href:active {
+        .glow-on-hover:active {
             color: #000
         }
 
-        .main_href:active:after {
+        .glow-on-hover:active:after {
             background: transparent;
         }
 
-        .main_href:hover:before {
+        .glow-on-hover:hover:before {
             opacity: 1;
         }
 
-        .main_href:after {
+        .glow-on-hover:after {
             z-index: -1;
             content: '';
             position: absolute;
@@ -269,12 +273,6 @@
             left: 0;
             top: 0;
             border-radius: 10px;
-        }
-        .href_enter {
-            color: darkorange;
-        }
-        .href_enter:visited, .href_enter:focus, .href_enter:hover {
-            color: #fff;
         }
 
         @keyframes glowing {
@@ -286,7 +284,7 @@
 </head>
 <body>
     <div class="main_href" >
-        <a class="href_enter" href="test-main.php" >назад</a>
+        <button onclick="document.location='test-main.php'" class="glow-on-hover" type="button">назад</button>
     </div>
 
     <div class="auth-container">

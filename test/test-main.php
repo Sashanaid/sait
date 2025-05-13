@@ -1,136 +1,78 @@
-<?php session_start();?>
+<?php 
+session_start();
+require 'config.php';
+
+// Получаем последние 5 статей из базы данных
+$conn = getDBConnection();
+$query = "SELECT 
+            a.id, 
+            a.title, 
+            a.content, 
+            a.image_path,
+            a.created_at,
+            a.category_id,
+            c.name AS category_name
+          FROM articles a
+          LEFT JOIN categories c ON a.category_id = c.id
+          ORDER BY a.created_at DESC 
+          LIMIT 5";
+
+$result = $conn->query($query);
+$articles = [];
+
+if ($result && $result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $articles[] = $row;
+    }
+}
+
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Статья - SportNews</title>
-    <link rel = "stylesheet" href="test-main.css">
+    <title>Статьи - SportNews</title>
+    <link rel="stylesheet" href="test-main.css">
 </head>
-<div class="img">
 <body>
-    <?php include ("header.php");?>
-    
-
-        <div class="article-preview">
-            <img src="https://via.placeholder.com/800x400" alt="Футбольный матч" class="article-image">
-            <div class="article-content">
-                <span class="article-category">Футбол</span>
-                <h2 class="article-title">Решающий матч чемпионата: обзор противостояния</h2>
-                <p class="article-excerpt">
-                    Вчера состоялся матч, который определил чемпиона этого сезона. В напряженной борьбе 
-                    команды показали все свое мастерство. Первый тайм прошел с преимуществом гостей, 
-                    но после перерыва хозяева смогли переломить ход игры. Особенно отличился нападающий...
-                </p>
-                <div class="article-meta">
-                    <span class="article-date">15 апреля 2023</span>
-                    <span class="article-author">Иван Спортивный</span>
-                </div>
-                <a href="#" class="read-more">Читать далее →</a>
-            </div>
-        </div>
-
-        <div class="article-preview">
-            <img src="https://via.placeholder.com/800x400" alt="Футбольный матч" class="article-image">
-            <div class="article-content">
-                <span class="article-category">Футбол</span>
-                <h2 class="article-title">Решающий матч чемпионата: обзор противостояния</h2>
-                <p class="article-excerpt">
-                    Вчера состоялся матч, который определил чемпиона этого сезона. В напряженной борьбе 
-                    команды показали все свое мастерство. Первый тайм прошел с преимуществом гостей, 
-                    но после перерыва хозяева смогли переломить ход игры. Особенно отличился нападающий...
-                </p>
-                <div class="article-meta">
-                    <span class="article-date">15 апреля 2023</span>
-                    <span class="article-author">Иван Спортивный</span>
-                </div>
-                <a href="#" class="read-more">Читать далее →</a>
-            </div>
-        </div>
-
-        <div class="article-preview">
-            <img src="https://via.placeholder.com/800x400" alt="Футбольный матч" class="article-image">
-            <div class="article-content">
-                <span class="article-category">Футбол</span>
-                <h2 class="article-title">Решающий матч чемпионата: обзор противостояния</h2>
-                <p class="article-excerpt">
-                    Вчера состоялся матч, который определил чемпиона этого сезона. В напряженной борьбе 
-                    команды показали все свое мастерство. Первый тайм прошел с преимуществом гостей, 
-                    но после перерыва хозяева смогли переломить ход игры. Особенно отличился нападающий...
-                </p>
-                <div class="article-meta">
-                    <span class="article-date">15 апреля 2023</span>
-                    <span class="article-author">Иван Спортивный</span>
-                </div>
-                <a href="#" class="read-more">Читать далее →</a>
-            </div>
-        </div>
-
-        <div class="article-preview">
-            <img src="https://via.placeholder.com/800x400" alt="Футбольный матч" class="article-image">
-            <div class="article-content">
-                <span class="article-category">Футбол</span>
-                <h2 class="article-title">Решающий матч чемпионата: обзор противостояния</h2>
-                <p class="article-excerpt">
-                    Вчера состоялся матч, который определил чемпиона этого сезона. В напряженной борьбе 
-                    команды показали все свое мастерство. Первый тайм прошел с преимуществом гостей, 
-                    но после перерыва хозяева смогли переломить ход игры. Особенно отличился нападающий...
-                </p>
-                <div class="article-meta">
-                    <span class="article-date">15 апреля 2023</span>
-                    <span class="article-author">Иван Спортивный</span>
-                </div>
-                <a href="#" class="read-more">Читать далее →</a>
-            </div>
-        </div>
-    
-    <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <div class="footer-logo">
-                    <img src="https://via.placeholder.com/40x40" alt="SportNews Logo">
-                    <div class="footer-logo-text">Sport<span>News</span></div>
-                </div>
-                <p class="footer-description">
-                    Самые свежие и актуальные новости спортивного мира. Эксклюзивные интервью, аналитика и прямые трансляции.
-                </p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="YouTube">▶️</a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Разделы</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Футбол</a></li>
-                    <li><a href="#">Хоккей</a></li>
-                    <li><a href="#">Баскетбол</a></li>
-                    <li><a href="#">Теннис</a></li>
-                    <li><a href="#">Олимпийские виды</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Компания</h3>
-                <ul class="footer-links">
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">Вакансии</a></li>
-                    <li><a href="#">Реклама</a></li>
-                    <li><a href="#">Партнеры</a></li>
-                </ul>
-            </div>
-            
-
+    <div class="img">
+        <?php include("header.php"); ?>
         
-        <div class="footer-bottom">
-            <p>&copy; 2023 SportNews. Все права защищены. | <a href="#" style="color: var(--gray-color);">Политика конфиденциальности</a> | <a href="#" style="color: var(--gray-color);">Условия использования</a></p>
-        </div>
-    </footer>
-
+        <?php if (!empty($articles)): ?>
+            <?php foreach ($articles as $article): ?>
+                <div class="article-preview">
+                    <img src="<?= htmlspecialchars($article['image_path'] ?? 'https://via.placeholder.com/400x200') ?>" 
+                         alt="<?= htmlspecialchars($article['title']) ?>" 
+                         class="article-image">
+                    <div class="article-content">
+                        <span class="article-category">
+                            <?= htmlspecialchars($article['category_name'] ?? 'Без категории') ?>
+                        </span>
+                        <h2 class="article-title"><?= htmlspecialchars($article['title']) ?></h2>
+                        <p class="article-excerpt">
+                            <?= substr(strip_tags($article['content']), 0, 200) ?>...
+                        </p>
+                        <div class="article-meta">
+                            <span class="article-date">
+                                <?= date('d.m.Y', strtotime($article['created_at'])) ?>
+                            </span>
+                            
+                        </div>
+                        <a href="article.php?id=<?= $article['id'] ?>" class="read-more">Читать далее →</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="no-articles">
+                <p>Статьи не найдены. Попробуйте позже.</p>
+            </div>
+        <?php endif; ?>
+        
+        <?php include("footer.php"); ?>
+    </div>
 </body>
-</div>
 </html>
