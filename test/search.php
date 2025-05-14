@@ -1,58 +1,49 @@
-<?php 
-session_start();
+<?php
+// search.php
 require 'config.php';
 
-// Получаем ID категории из URL, если есть
-$category_id = isset($_GET['category']) ? intval($_GET['category']) : null;
-
-// Базовый запрос
-$query = "SELECT 
-            a.id, 
-            a.title, 
-            a.content, 
-            a.image_path,
-            a.created_at,
-            a.category_id,
-            c.name AS category_name
-          FROM articles a
-          LEFT JOIN categories c ON a.category_id = c.id";
-
-// Добавляем условие фильтрации, если выбрана категория
-if ($category_id) {
-    $query .= " WHERE a.category_id = " . $category_id;
-}
-
-$query .= " ORDER BY a.created_at DESC LIMIT 5";
-
-$conn = getDBConnection();
-$result = $conn->query($query);
+$searchTerm = isset($_GET['search_query']) ? trim($_GET['search_query']) : '';
 $articles = [];
 
-if ($result && $result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+if (!empty($searchTerm)) {
+    $conn = getDBConnection();
+    
+    $stmt = $conn->prepare("
+        SELECT id, title, content, image_path, created_at 
+        FROM articles 
+        WHERE title LIKE ? 
+        ORDER BY created_at DESC
+    ");
+    
+    $searchParam = "%" . $searchTerm . "%";
+    $stmt->bind_param("s", $searchParam);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    while ($row = $result->fetch_assoc()) {
         $articles[] = $row;
     }
+    
+    $stmt->close();
+    $conn->close();
 }
 
 
-$conn->close();
 ?>
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $category_id ? htmlspecialchars($articles[0]['category_name']).' - ' : '' ?>Статьи - SportNews
-    </title>
+    <title>Результаты поиска: <?= htmlspecialchars($searchTerm) ?> | SportNews</title>
     <link rel="stylesheet" href="test-main.css">
 </head>
 <body>
-    <div class="img">
-        <?php include("header.php"); ?>
+    <?php include "header.php"?>
+    <main class="search-results-page">
+        <h1>Результаты поиска: "<?= htmlspecialchars($searchTerm) ?>"</h1>
         
-        <?php if (!empty($articles)): ?>
+         <?php if (!empty($articles)): ?>
             <?php foreach ($articles as $article): ?>
                 <div class="article-preview">
                     <img src="<?= htmlspecialchars($article['image_path'] ?? 'https://via.placeholder.com/400x200') ?>" 
@@ -81,8 +72,8 @@ $conn->close();
                 <p>Статьи не найдены. Попробуйте позже.</p>
             </div>
         <?php endif; ?>
-        
-        <?php include("footer.php"); ?>
-    </div>
+    </main>
+    
+    <?php include 'footer.php'; ?>
 </body>
 </html>

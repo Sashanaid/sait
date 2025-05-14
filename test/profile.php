@@ -36,7 +36,7 @@ closeDBConnection($conn);
         }
         .profile-container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 10px auto;
             background: white;
             padding: 30px;
             border-radius: 8px;

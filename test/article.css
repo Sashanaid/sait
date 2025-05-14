@@ -1,0 +1,51 @@
+@import "header.css";
+
+body {
+    background: url('https://images.wallpaperscraft.ru/image/single/futbolnoe_pole_gazon_vorota_115238_1920x1080.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: var(--text-color);
+    line-height:1.6;
+}
+
+.article-container {
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.article-full {
+    padding: 30px;
+}
+
+.article-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.article-content {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.related-articles {
+    margin-top: 50px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
