@@ -31,7 +31,6 @@ closeDBConnection($conn);
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-           
             background-color: #f3f4f6;
         }
         .profile-container {
@@ -52,17 +51,26 @@ closeDBConnection($conn);
         .profile-info p {
             margin: 10px 0;
         }
-        .logout-btn {
-            background-color: #dc2626;
+        .logout-btn, .admin-btn {
             color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            margin-right: 10px;
+        }
+        .logout-btn {
+            background-color: #dc2626;
         }
         .logout-btn:hover {
             background-color: #b91c1c;
+        }
+        .admin-btn {
+            background-color: #1e3a8a;
+        }
+        .admin-btn:hover {
+            background-color: #1e40af;
         }
     </style>
 </head>
@@ -76,7 +84,13 @@ closeDBConnection($conn);
             <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
         </div>
         
-        <button class="logout-btn" onclick="location.href='logout.php'">Выйти</button>
+        <div class="button-group">
+            <button class="logout-btn" onclick="location.href='logout.php'">Выйти</button>
+            
+            <?php if ($_SESSION['user_id'] == 1): ?>
+                <button class="admin-btn" onclick="location.href='add-article-form.php'">Админ-панель</button>
+            <?php endif; ?>
+        </div>
     </div>
 </body>
 </html>
