@@ -7,6 +7,36 @@
 }
 
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('https://images.wallpaperscraft.ru/image/single/futbolnoe_pole_gazon_vorota_115238_1920x1080.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+    padding-bottom: 20px; /* Добавляем отступ снизу */
+}
+
 
 @media (max-width: 768px) {
     nav {

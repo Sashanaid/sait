@@ -52,6 +52,10 @@ $conn->close();
     <div class="img">
         <?php include("header.php"); ?>
         
+
+        <div class="content-wrapper">
+            <?php if (!empty($articles)): ?>
+                <?php foreach ($articles as $article): ?>
         <?php if (!empty($articles)): ?>
             <?php foreach ($articles as $article): ?>
                 <div class="article-preview">
@@ -81,6 +85,14 @@ $conn->close();
                 <p>Статьи не найдены. Попробуйте позже.</p>
             </div>
         <?php endif; ?>
+
+        <?php endforeach; ?>
+            <?php else: ?>
+                <div class="no-articles">
+                    <p>Статьи не найдены. Попробуйте позже.</p>
+                </div>
+            <?php endif; ?>
+        </div>
         
         <?php include("footer.php"); ?>
     </div>

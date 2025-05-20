@@ -88,7 +88,7 @@ closeDBConnection($conn);
             <button class="logout-btn" onclick="location.href='logout.php'">Выйти</button>
             
             <?php if ($_SESSION['user_id'] == 1): ?>
-                <button class="admin-btn" onclick="location.href='add-article-form.php'">Админ-панель</button>
+                <button class="admin-btn" onclick="location.href='admin.php'">Админ-панель</button>
             <?php endif; ?>
         </div>
     </div>
