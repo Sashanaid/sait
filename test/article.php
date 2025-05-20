@@ -112,36 +112,7 @@ $conn->close();
             </div>
         </article>
 
-        <section class="related-articles">
-            <h2>Похожие статьи</h2>
-            <?php
-            $conn = getDBConnection();
-            $related = $conn->query("
-                SELECT id, title, image_path 
-                FROM articles 
-                WHERE category_id = {$article['category_id']} AND id != {$article['id']}
-                ORDER BY created_at DESC 
-                LIMIT 3
-            ");
-            
-            if ($related->num_rows > 0): ?>
-                <div class="related-grid">
-                    <?php while($rel_article = $related->fetch_assoc()): ?>
-                        <a href="article.php?id=<?= $rel_article['id'] ?>" class="related-item">
-                            <?php if ($rel_article['image_path']): ?>
-                                <img src="<?= htmlspecialchars($rel_article['image_path']) ?>" 
-                                     alt="<?= htmlspecialchars($rel_article['title']) ?>">
-                            <?php endif; ?>
-                            <h3><?= htmlspecialchars($rel_article['title']) ?></h3>
-                        </a>
-                    <?php endwhile; ?>
-                </div>
-            <?php else: ?>
-                <p>Нет похожих статей</p>
-            <?php endif; 
-            $conn->close();
-            ?>
-        </section>
+        
 
         <section class="comments-section">
             <h2>Комментарии</h2>

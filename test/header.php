@@ -77,7 +77,7 @@ if (isset($_GET['search_query'])) {
         </div>
         
         <div class="logo">
-            <img src="https://via.placeholder.com/40x40" alt="SportNews Logo">
+            <img src="\uploads\authors\photo_2025-05-20_09-15-17.jpg" alt="SportNews Logo">
             <div class="logo-text">Sport<span>News</span></div>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <button class="subscribe-btn" onclick="document.location='profile.php'">Личный кабинет</button>

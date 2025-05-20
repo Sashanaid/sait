@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($conn->query($query)) {
         $conn->close();
-        header('Location: /article-added-success.html');
+        header('Location: test-main.php');
         exit;
     } else {
         $error = "Ошибка при сохранении статьи: " . $conn->error;

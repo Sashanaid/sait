@@ -162,7 +162,7 @@
     <div class="footer-container">
         <div class="footer-about">
             <div class="footer-logo">
-                <img src="https://via.placeholder.com/40x40" alt="SportNews Logo">
+                <img src="\uploads\authors\photo_2025-05-20_09-15-17.jpg" alt="SportNews Logo">
                 <div class="footer-logo-text">Sport<span>News</span></div>
             </div>
             <p class="footer-description">
@@ -185,9 +185,9 @@
         <div class="footer-column">
             <h3>Компания</h3>
             <ul class="footer-links">
-                <li><a href="author.php">О нас</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Реклама</a></li>
+                <li><a href="author.php">Об авторе</a></li>
+                <li><a href="#">Контакты: viiisris@gmail.com</a></li>
+                <li><a href="#">Реклама: viiisris@gmail.com</a></li>
                 <li><a href="#">Партнеры</a></li>
             </ul>
         </div>

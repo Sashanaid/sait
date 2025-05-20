@@ -323,7 +323,7 @@ $conn->close();
         <div class="admin-container">
             <div class="admin-header">
                 <h1 class="admin-title">Панель администратора</h1>
-                <a href="admin_logout.php" class="logout-btn">Выйти</a>
+                <a href="add-article-form.php" class="logout-btn">добавить статьи</a>
             </div>
             
             <?php if (isset($_SESSION['message'])): ?>
