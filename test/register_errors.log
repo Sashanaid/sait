@@ -630,3 +630,33 @@
 2025-05-13 20:39:44 - Database connection closed
 2025-05-13 20:39:44 - ----- End of Request -----
 
+----- New Request -----
+2025-05-21 19:01:12 - Starting registration process
+2025-05-21 19:01:12 - Config loaded
+2025-05-21 19:01:12 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasa@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-21 19:01:12 - Database connection established
+2025-05-21 19:01:12 - User already exists
+----- New Request -----
+2025-05-21 19:01:20 - Starting registration process
+2025-05-21 19:01:20 - Config loaded
+2025-05-21 19:01:20 - Received data: Array
+(
+    [username] => sasha
+    [email] => sasa@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-21 19:01:20 - Database connection established
+2025-05-21 19:01:20 - Password hashed
+2025-05-21 19:01:20 - User registered successfully
+2025-05-21 19:01:20 - Database connection closed
+2025-05-21 19:01:20 - ----- End of Request -----
+

@@ -15,6 +15,9 @@ if (!isset($_GET['id'])) {
 $conn = getDBConnection();
 $article_id = intval($_GET['id']);
 
+// Проверка прав администратора
+$is_admin = isset($_SESSION['user_id']) && $_SESSION['user_id'] === 1;
+
 // Получаем статью и увеличиваем счетчик просмотров
 $stmt = $conn->prepare("
     SELECT 
@@ -34,24 +37,33 @@ if ($result->num_rows === 0) {
 }
 
 $article = $result->fetch_assoc();
+$stmt->close();
 
+// Обработка удаления комментария
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment']) && $is_admin) {
+    $comment_id = intval($_POST['delete_comment']);
+    $delete_stmt = $conn->prepare("DELETE FROM comments WHERE id = ?");
+    $delete_stmt->bind_param("i", $comment_id);
+    $delete_stmt->execute();
+    $delete_stmt->close();
+    
+    header("Location: article.php?id=$article_id");
+    exit;
+}
 
-$conn->close();
 // Обработка отправки комментария
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment_content'])) {
     if (!isset($_SESSION['user_id'])) {
-        die('Доступ запрещен'); // Дополнительная защита
+        die('Доступ запрещен');
     }
     
     $content = trim($_POST['comment_content']);
     
     if (!empty($content)) {
-        $conn = getDBConnection();
         $stmt = $conn->prepare("INSERT INTO comments (article_id, user_id, content) VALUES (?, ?, ?)");
         $stmt->bind_param("iis", $article_id, $_SESSION['user_id'], $content);
         $stmt->execute();
         $stmt->close();
-        $conn->close();
         
         header("Location: article.php?id=$article_id");
         exit;
@@ -59,11 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment_content'])) {
 }
 
 // Получение комментариев
-$conn = getDBConnection();
 $comments_stmt = $conn->prepare("
     SELECT c.*, u.username 
     FROM comments c
-    JOIN users u ON c.user_id = u.id  /* LEFT JOIN заменен на JOIN, так как user_id обязателен */
+    JOIN users u ON c.user_id = u.id
     WHERE c.article_id = ?
     ORDER BY c.created_at DESC
 ");
@@ -112,13 +123,10 @@ $conn->close();
             </div>
         </article>
 
-        
-
         <section class="comments-section">
             <h2>Комментарии</h2>
             
             <?php if (isset($_SESSION['user_id'])): ?>
-                <!-- Форма для зарегистрированных пользователей -->
                 <div class="comment-form">
                     <h3>Оставить комментарий</h3>
                     <form method="POST">
@@ -129,13 +137,11 @@ $conn->close();
                     </form>
                 </div>
             <?php else: ?>
-                <!-- Сообщение для незарегистрированных пользователей -->
                 <div class="auth-required">
-                    <p>Чтобы оставить комментарий, пожалуйста <a href="enter.html">войдите</a> .</p>
+                    <p>Чтобы оставить комментарий, пожалуйста <a href="enter.html">войдите</a>.</p>
                 </div>
             <?php endif; ?>
             
-            <!-- Список комментариев остается без изменений -->
             <div class="comments-list">
                 <?php if (!empty($comments)): ?>
                     <?php foreach ($comments as $comment): ?>
@@ -147,6 +153,12 @@ $conn->close();
                                 <span class="comment-date">
                                     <?= date('d.m.Y H:i', strtotime($comment['created_at'])) ?>
                                 </span>
+                                <?php if ($is_admin): ?>
+                                    <form method="POST" class="delete-comment-form" onsubmit="return confirm('Вы уверены, что хотите удалить этот комментарий?');">
+                                        <input type="hidden" name="delete_comment" value="<?= $comment['id'] ?>">
+                                        <button type="submit" class="delete-btn">Удалить</button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
                             <div class="comment-content">
                                 <?= nl2br(htmlspecialchars($comment['content'])) ?>
@@ -160,7 +172,6 @@ $conn->close();
         </section>
     </main>
 
-    
-</body>
     <?php include 'footer.php'; ?>
+</body>
 </html>

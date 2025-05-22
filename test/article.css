@@ -151,3 +151,24 @@ body {
 .auth-required a:hover {
     color: var(--secondary-color);
 }
+
+/* Стили для кнопки удаления комментария */
+.delete-comment-form {
+    display: inline;
+    margin-left: 10px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
