@@ -1,0 +1,662 @@
+2025-05-02 21:10:18 - Unknown column 'id' in 'field list'
+2025-05-02 21:12:36 - Unknown column 'id' in 'field list'
+2025-05-03 16:27:24 - Unknown column 'id' in 'field list'
+2025-05-03 16:31:02 - Unknown column 'id' in 'field list'
+----- New Request -----
+----- New Request -----
+2025-05-03 16:42:58 - Starting registration process
+2025-05-03 16:42:58 - Config loaded
+2025-05-03 16:42:58 - Received data: Array
+(
+    [username] => testuser
+    [email] => test@example.com
+    [password] => 12345678
+    [confirmPassword] => 12345678
+)
+
+2025-05-03 16:42:58 - Database connection established
+2025-05-03 16:42:58 - Exception: Unknown column 'id' in 'field list'
+2025-05-03 16:42:58 - Stack trace: #0 E:\саша\уник\проект\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-03 16:42:58 - Database connection closed
+2025-05-03 16:42:58 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 16:48:45 - Starting registration process
+2025-05-03 16:48:45 - Config loaded
+2025-05-03 16:48:45 - Received data: Array
+(
+    [username] => testuser
+    [email] => test@example.com
+    [password] => 12345678
+    [confirmPassword] => 12345678
+)
+
+2025-05-03 16:48:45 - Database connection established
+2025-05-03 16:48:45 - Exception: Unknown column 'username' in 'where clause'
+2025-05-03 16:48:45 - Stack trace: #0 E:\саша\уник\проект\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-03 16:48:45 - Database connection closed
+2025-05-03 16:48:45 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 16:49:49 - Starting registration process
+2025-05-03 16:49:49 - Config loaded
+2025-05-03 16:49:49 - Received data: Array
+(
+    [username] => testuser
+    [email] => test@example.com
+    [password] => 12345678
+    [confirmPassword] => 12345678
+)
+
+2025-05-03 16:49:49 - Database connection established
+2025-05-03 16:49:49 - Exception: Unknown column 'email' in 'where clause'
+2025-05-03 16:49:49 - Stack trace: #0 E:\саша\уник\проект\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-03 16:49:49 - Database connection closed
+2025-05-03 16:49:49 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 16:52:53 - Starting registration process
+2025-05-03 16:52:53 - Config loaded
+2025-05-03 16:52:53 - Received data: Array
+(
+    [username] => testuser
+    [email] => test@example.com
+    [password] => 12345678
+    [confirmPassword] => 12345678
+)
+
+2025-05-03 16:52:53 - Database connection established
+2025-05-03 16:52:53 - Password hashed
+2025-05-03 16:52:53 - Exception: Unknown column 'password_hash' in 'field list'
+2025-05-03 16:52:53 - Stack trace: #0 E:\саша\уник\проект\register.php(66): mysqli->prepare('INSERT INTO use...')
+#1 {main}
+2025-05-03 16:52:53 - Database connection closed
+2025-05-03 16:52:53 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 16:54:17 - Starting registration process
+2025-05-03 16:54:17 - Config loaded
+2025-05-03 16:54:17 - Received data: Array
+(
+    [username] => testuser
+    [email] => test@example.com
+    [password] => 12345678
+    [confirmPassword] => 12345678
+)
+
+2025-05-03 16:54:17 - Database connection established
+2025-05-03 16:54:18 - Password hashed
+2025-05-03 16:54:18 - Exception: Column count doesn't match value count at row 1
+2025-05-03 16:54:18 - Stack trace: #0 E:\саша\уник\проект\register.php(66): mysqli->prepare('INSERT INTO use...')
+#1 {main}
+2025-05-03 16:54:18 - Database connection closed
+2025-05-03 16:54:18 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 16:55:46 - Starting registration process
+2025-05-03 16:55:46 - Config loaded
+2025-05-03 16:55:46 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-03 16:55:46 - Database connection established
+2025-05-03 16:55:46 - Password hashed
+2025-05-03 16:55:46 - Exception: Column count doesn't match value count at row 1
+2025-05-03 16:55:46 - Stack trace: #0 E:\саша\уник\проект\register.php(66): mysqli->prepare('INSERT INTO use...')
+#1 {main}
+2025-05-03 16:55:46 - Database connection closed
+2025-05-03 16:55:46 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 16:55:49 - Starting registration process
+2025-05-03 16:55:49 - Config loaded
+2025-05-03 16:55:49 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-03 16:55:49 - Database connection established
+2025-05-03 16:55:49 - Password hashed
+2025-05-03 16:55:49 - Exception: Column count doesn't match value count at row 1
+2025-05-03 16:55:49 - Stack trace: #0 E:\саша\уник\проект\register.php(66): mysqli->prepare('INSERT INTO use...')
+#1 {main}
+2025-05-03 16:55:49 - Database connection closed
+2025-05-03 16:55:49 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 17:00:59 - Starting registration process
+2025-05-03 17:00:59 - Config loaded
+2025-05-03 17:00:59 - Received data: Array
+(
+    [username] => testuser
+    [email] => test@example.com
+    [password] => 12345678
+    [confirmPassword] => 12345678
+)
+
+2025-05-03 17:00:59 - Database connection established
+2025-05-03 17:00:59 - Password hashed
+2025-05-03 17:00:59 - Exception: Data too long for column 'password' at row 1
+2025-05-03 17:00:59 - Stack trace: #0 E:\саша\уник\проект\register.php(74): mysqli_stmt->execute()
+#1 {main}
+2025-05-03 17:00:59 - Database connection closed
+2025-05-03 17:00:59 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 17:02:27 - Starting registration process
+2025-05-03 17:02:27 - Config loaded
+2025-05-03 17:02:27 - Received data: Array
+(
+    [username] => testuser
+    [email] => test@example.com
+    [password] => 12345678
+    [confirmPassword] => 12345678
+)
+
+2025-05-03 17:02:27 - Database connection established
+2025-05-03 17:02:27 - Password hashed
+2025-05-03 17:02:27 - User registered successfully
+2025-05-03 17:02:27 - Database connection closed
+2025-05-03 17:02:27 - ----- End of Request -----
+
+----- New Request -----
+2025-05-03 17:07:40 - Starting registration process
+2025-05-03 17:07:40 - Config loaded
+2025-05-03 17:07:40 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 132
+)
+
+2025-05-03 17:07:40 - Database connection established
+2025-05-03 17:07:41 - Password hashed
+2025-05-03 17:07:41 - User registered successfully
+2025-05-03 17:07:41 - Database connection closed
+2025-05-03 17:07:41 - ----- End of Request -----
+
+----- New Request -----
+2025-05-05 17:51:36 - Starting registration process
+2025-05-05 17:51:36 - Config loaded
+2025-05-05 17:51:36 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-05 17:51:36 - Database connection established
+2025-05-05 17:51:36 - User already exists
+----- New Request -----
+2025-05-13 20:27:56 - Starting registration process
+2025-05-13 20:27:56 - Config loaded
+2025-05-13 20:27:56 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:27:56 - Database connection established
+2025-05-13 20:27:56 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:27:56 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:27:56 - Database connection closed
+2025-05-13 20:27:56 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:00 - Starting registration process
+2025-05-13 20:28:00 - Config loaded
+2025-05-13 20:28:00 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:00 - Database connection established
+2025-05-13 20:28:00 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:00 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:00 - Database connection closed
+2025-05-13 20:28:00 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:01 - Starting registration process
+2025-05-13 20:28:01 - Config loaded
+2025-05-13 20:28:01 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:01 - Database connection established
+2025-05-13 20:28:01 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:01 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:01 - Database connection closed
+2025-05-13 20:28:01 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:01 - Starting registration process
+2025-05-13 20:28:01 - Config loaded
+2025-05-13 20:28:01 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:01 - Database connection established
+2025-05-13 20:28:01 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:01 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:01 - Database connection closed
+2025-05-13 20:28:01 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:09 - Starting registration process
+2025-05-13 20:28:09 - Config loaded
+2025-05-13 20:28:09 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:09 - Database connection established
+2025-05-13 20:28:09 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:09 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:09 - Database connection closed
+2025-05-13 20:28:09 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:31 - Starting registration process
+2025-05-13 20:28:31 - Config loaded
+2025-05-13 20:28:31 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:31 - Database connection established
+2025-05-13 20:28:31 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:31 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:31 - Database connection closed
+2025-05-13 20:28:31 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:31 - Starting registration process
+2025-05-13 20:28:31 - Config loaded
+2025-05-13 20:28:31 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:31 - Database connection established
+2025-05-13 20:28:31 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:31 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:31 - Database connection closed
+2025-05-13 20:28:31 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:32 - Starting registration process
+2025-05-13 20:28:32 - Config loaded
+2025-05-13 20:28:32 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:32 - Database connection established
+2025-05-13 20:28:32 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:32 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:32 - Database connection closed
+2025-05-13 20:28:32 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:32 - Starting registration process
+2025-05-13 20:28:32 - Config loaded
+2025-05-13 20:28:32 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:32 - Database connection established
+2025-05-13 20:28:32 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:32 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:32 - Database connection closed
+2025-05-13 20:28:32 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:32 - Starting registration process
+2025-05-13 20:28:32 - Config loaded
+2025-05-13 20:28:32 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:32 - Database connection established
+2025-05-13 20:28:32 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:32 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:32 - Database connection closed
+2025-05-13 20:28:32 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:32 - Starting registration process
+2025-05-13 20:28:32 - Config loaded
+2025-05-13 20:28:32 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:32 - Database connection established
+2025-05-13 20:28:32 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:32 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:32 - Database connection closed
+2025-05-13 20:28:32 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:33 - Starting registration process
+2025-05-13 20:28:33 - Config loaded
+2025-05-13 20:28:33 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:33 - Database connection established
+2025-05-13 20:28:33 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:33 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:33 - Database connection closed
+2025-05-13 20:28:33 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:28:33 - Starting registration process
+2025-05-13 20:28:33 - Config loaded
+2025-05-13 20:28:33 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:28:33 - Database connection established
+2025-05-13 20:28:33 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:28:33 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:28:33 - Database connection closed
+2025-05-13 20:28:33 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:29:21 - Starting registration process
+2025-05-13 20:29:21 - Config loaded
+2025-05-13 20:29:21 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:29:21 - Database connection established
+2025-05-13 20:29:21 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:29:21 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:29:21 - Database connection closed
+2025-05-13 20:29:21 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:29:38 - Starting registration process
+2025-05-13 20:29:38 - Config loaded
+2025-05-13 20:29:38 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:29:38 - Database connection established
+2025-05-13 20:29:38 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:29:38 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:29:38 - Database connection closed
+2025-05-13 20:29:38 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:29:38 - Starting registration process
+2025-05-13 20:29:38 - Config loaded
+2025-05-13 20:29:38 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:29:38 - Database connection established
+2025-05-13 20:29:38 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:29:38 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:29:38 - Database connection closed
+2025-05-13 20:29:38 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:29:38 - Starting registration process
+2025-05-13 20:29:38 - Config loaded
+2025-05-13 20:29:38 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:29:38 - Database connection established
+2025-05-13 20:29:38 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:29:38 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:29:38 - Database connection closed
+2025-05-13 20:29:38 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:29:38 - Starting registration process
+2025-05-13 20:29:38 - Config loaded
+2025-05-13 20:29:38 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:29:38 - Database connection established
+2025-05-13 20:29:38 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:29:38 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:29:38 - Database connection closed
+2025-05-13 20:29:38 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:32:29 - Starting registration process
+2025-05-13 20:32:29 - Config loaded
+2025-05-13 20:32:29 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:32:29 - Database connection established
+2025-05-13 20:32:29 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:32:29 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:32:29 - Database connection closed
+2025-05-13 20:32:29 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:32:29 - Starting registration process
+2025-05-13 20:32:29 - Config loaded
+2025-05-13 20:32:29 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:32:29 - Database connection established
+2025-05-13 20:32:29 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:32:29 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:32:29 - Database connection closed
+2025-05-13 20:32:29 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:32:29 - Starting registration process
+2025-05-13 20:32:29 - Config loaded
+2025-05-13 20:32:29 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:32:29 - Database connection established
+2025-05-13 20:32:29 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:32:29 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:32:29 - Database connection closed
+2025-05-13 20:32:29 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:32:31 - Starting registration process
+2025-05-13 20:32:31 - Config loaded
+2025-05-13 20:32:31 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:32:31 - Database connection established
+2025-05-13 20:32:31 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:32:31 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:32:31 - Database connection closed
+2025-05-13 20:32:31 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:32:31 - Starting registration process
+2025-05-13 20:32:31 - Config loaded
+2025-05-13 20:32:31 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:32:31 - Database connection established
+2025-05-13 20:32:31 - Exception: Unknown column 'id' in 'field list'
+2025-05-13 20:32:31 - Stack trace: #0 D:\Саша\уник\ос баз данных\sait\sait\test\register.php(41): mysqli->prepare('SELECT id FROM ...')
+#1 {main}
+2025-05-13 20:32:31 - Database connection closed
+2025-05-13 20:32:31 - ----- End of Request -----
+
+----- New Request -----
+2025-05-13 20:39:44 - Starting registration process
+2025-05-13 20:39:44 - Config loaded
+2025-05-13 20:39:44 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-13 20:39:44 - Database connection established
+2025-05-13 20:39:44 - Password hashed
+2025-05-13 20:39:44 - User registered successfully
+2025-05-13 20:39:44 - Database connection closed
+2025-05-13 20:39:44 - ----- End of Request -----
+
+----- New Request -----
+2025-05-21 19:01:12 - Starting registration process
+2025-05-21 19:01:12 - Config loaded
+2025-05-21 19:01:12 - Received data: Array
+(
+    [username] => 09758
+    [email] => sasa@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-21 19:01:12 - Database connection established
+2025-05-21 19:01:12 - User already exists
+----- New Request -----
+2025-05-21 19:01:20 - Starting registration process
+2025-05-21 19:01:20 - Config loaded
+2025-05-21 19:01:20 - Received data: Array
+(
+    [username] => sasha
+    [email] => sasa@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-21 19:01:20 - Database connection established
+2025-05-21 19:01:20 - Password hashed
+2025-05-21 19:01:20 - User registered successfully
+2025-05-21 19:01:20 - Database connection closed
+2025-05-21 19:01:20 - ----- End of Request -----
+

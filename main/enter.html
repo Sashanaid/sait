@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход/Регистрация | SportNews</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #dc2626;
+            --text-color: #1f2937;
+            --light-color: #f8fafc;
+            --gray-color: #e5e7eb;
+            --dark-gray: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .auth-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .auth-image {
+            flex: 1;
+            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), 
+                        url('https://images.unsplash.com/photo-1543351611-58f69d7c1781?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+        }
+        
+        .auth-image h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .auth-image p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .auth-content {
+            flex: 1;
+            padding: 50px;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--gray-color);
+        }
+        
+        .auth-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-gray);
+            position: relative;
+        }
+        
+        .auth-tab.active {
+            color: var(--primary-color);
+        }
+        
+        .auth-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .form-header {
+            margin-bottom: 25px;
+        }
+        
+        .form-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: var(--dark-gray);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-color);
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 10px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a2f6b;
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--dark-gray);
+        }
+        
+        .auth-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .auth-container {
+                flex-direction: column;
+            }
+            
+            .auth-image {
+                display: none;
+            }
+            
+            .auth-content {
+                padding: 30px;
+            }
+        }
+
+        .glow-on-hover {
+        justify-content: center;
+    align-items: center;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        text-align: center;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        z-index: 0;
+        border-radius: 10px;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left:-2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:active {
+            color: #000
+        }
+
+        .glow-on-hover:active:after {
+            background: transparent;
+        }
+
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="main_href" >
+        <button onclick="document.location='test-main.php'" class="glow-on-hover" type="button">назад</button>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-image">
+            <h2>Добро пожаловать в SportNews</h2>
+            <p>Присоединяйтесь к нашему спортивному сообществу. Получайте эксклюзивные новости, аналитику и большое количество статей о спорте.</p>
+        </div>
+        
+        <div class="auth-content">
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="switchTab('login')">Вход</div>
+                <div class="auth-tab" onclick="switchTab('register')">Регистрация</div>
+            </div>
+            
+            <!-- Форма входа -->
+            <form id="loginForm" class="auth-form active" method="post">
+                <div class="form-header">
+                    <h2>Войдите в аккаунт</h2>
+                    <p>Введите свои учетные данные для входа</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login">Логин</label>
+                    <input type="text" id="login" name="login" class="form-control" placeholder="Ваш логин" required>
+                    <div class="error-message" id="loginError">Неверный логин</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Пароль</label>
+                    <div class="password-container">
+                        <input type="password" id="loginPassword" name="password" class="form-control" placeholder="Ваш пароль" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('loginPassword')">👁️</span>
+                    </div>
+                    <div class="error-message" id="loginPasswordError">Неверный пароль</div>
+                </div>
+                
+                <div class="form-group" style="text-align: right;">
+                    <a href="#" style="font-size: 14px; color: var(--primary-color);">Забыли пароль?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Войти</button>
+                
+                <div class="auth-footer">
+                    Нет аккаунта? <a href="#" onclick="switchTab('register')">Зарегистрируйтесь</a>
+                </div>
+            </form>
+
+            <!-- Форма регистрации -->
+            <form id="registerForm" class="auth-form" method="post">
+                <div class="form-header">
+                    <h2>Создайте аккаунт</h2>
+                    <p>Присоединяйтесь к нашему спортивному сообществу</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="username">Имя пользователя</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Придумайте логин" required>
+                    <div class="error-message" id="usernameError">Имя пользователя уже занято</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Ваш email" required>
+                    <div class="error-message" id="emailError">Некорректный email</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Не менее 8 символов" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('password')">👁️</span>
+                    </div>
+                    <div class="error-message" id="passwordError">Пароль слишком простой</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Подтвердите пароль</label>
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Повторите пароль" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('confirmPassword')">👁️</span>
+                    </div>
+                    <div class="error-message" id="confirmPasswordError">Пароли не совпадают</div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                
+                <div class="auth-footer">
+                    Уже есть аккаунт? <a href="#" onclick="switchTab('login')">Войти</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        
+        // Переключение между вкладками
+        function switchTab(tabName) {
+            // Управление активными вкладками
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.querySelector(`.auth-tab[onclick="switchTab('${tabName}')"]`).classList.add('active');
+            
+            // Управление активными формами
+            document.querySelectorAll('.auth-form').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+            document.getElementById(`${tabName}Form`).classList.add('active');
+            
+            // Сбрасываем ошибки при переключении вкладок
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.style.display = 'none';
+            });
+        }
+        
+        // Показать/скрыть пароль
+        function togglePasswordVisibility(fieldId) {
+            const field = document.getElementById(fieldId);
+            if (field.type === "password") {
+                field.type = "text";
+            } else {
+                field.type = "password";
+            }
+        }
+    // Обработка формы входа
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    
+    fetch('login.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            if (data.redirect) {
+                window.location.href = data.redirect;
+            }
+        } else {
+            // Показываем ошибки
+            if (data.errors) {
+                for (const field in data.errors) {
+                    const errorElement = document.getElementById(`${field}Error`);
+                    if (errorElement) {
+                        errorElement.textContent = data.errors[field];
+                        errorElement.style.display = 'block';
+                    }
+                }
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+// Обработка формы регистрации
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    
+    fetch('register.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            switchTab('login');
+        } else {
+            // Показываем ошибки
+            if (data.errors) {
+                for (const field in data.errors) {
+                    const errorElement = document.getElementById(`${field}Error`);
+                    if (errorElement) {
+                        errorElement.textContent = data.errors[field];
+                        errorElement.style.display = 'block';
+                    }
+                }
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+        
+    </script>
+</body>
+</html>
