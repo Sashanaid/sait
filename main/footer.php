@@ -162,8 +162,8 @@
     <div class="footer-container">
         <div class="footer-about">
             <div class="footer-logo">
-                <img src="\uploads\authors\photo_2025-05-20_09-15-17.jpg" alt="SportNews Logo">
-                <div class="footer-logo-text">Sport<span>News</span></div>
+                <img onclick="document.location='author.php'" src="\uploads\authors\photo_2025-05-20_09-15-17.jpg" alt="SportNews Logo">
+                <div onclick="document.location='test-main.php'" class="footer-logo-text">Sport<span>News</span></div>
             </div>
             <p class="footer-description">
                 Самые свежие и актуальные новости спортивного мира. Эксклюзивные интервью, аналитика и прямые трансляции.

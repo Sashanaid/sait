@@ -660,3 +660,50 @@
 2025-05-21 19:01:20 - Database connection closed
 2025-05-21 19:01:20 - ----- End of Request -----
 
+----- New Request -----
+2025-05-30 10:46:27 - Starting registration process
+2025-05-30 10:46:27 - Config loaded
+2025-05-30 10:46:27 - Received data: Array
+(
+    [username] => sasha7373737
+    [email] => sasanajduhov@gmail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-30 10:46:27 - Database connection established
+2025-05-30 10:46:27 - User already exists
+----- New Request -----
+2025-05-30 10:48:56 - Starting registration process
+2025-05-30 10:48:56 - Config loaded
+2025-05-30 10:48:56 - Received data: Array
+(
+    [username] => Наталья Ивановна
+    [email] => Tsarkovani@mail.ru
+    [password] => ghujlern87
+    [confirmPassword] => ghjlern87
+)
+
+2025-05-30 10:48:56 - Database connection established
+2025-05-30 10:48:56 - Password hashed
+2025-05-30 10:48:56 - User registered successfully
+2025-05-30 10:48:56 - Database connection closed
+2025-05-30 10:48:56 - ----- End of Request -----
+
+----- New Request -----
+2025-05-30 13:25:10 - Starting registration process
+2025-05-30 13:25:10 - Config loaded
+2025-05-30 13:25:10 - Received data: Array
+(
+    [username] => sasha
+    [email] => sada@mail.com
+    [password] => 123
+    [confirmPassword] => 123
+)
+
+2025-05-30 13:25:10 - Database connection established
+2025-05-30 13:25:10 - Password hashed
+2025-05-30 13:25:10 - User registered successfully
+2025-05-30 13:25:10 - Database connection closed
+2025-05-30 13:25:10 - ----- End of Request -----
+

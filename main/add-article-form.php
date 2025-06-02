@@ -52,6 +52,7 @@ while ($row = $result->fetch_assoc()) {
         body {
             background-color: #f3f4f6;
             padding: 20px;
+            position: relative;
         }
         
         .form-container {
@@ -122,77 +123,36 @@ while ($row = $result->fetch_assoc()) {
             margin-top: 5px;
         }
 
-        .glow-on-hover {
-        justify-content: center;
-    align-items: center;
-        display: flex;
-        position: absolute;
-        align-items: center;
-        text-align: center;
-        top: 10px;
-        left: 10px;
-        width: 50px;
-        height: 50px;
-        border: none;
-        outline: none;
-        color: #fff;
-        background: #111;
-        cursor: pointer;
-        z-index: 0;
-        border-radius: 10px;
+        .back-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 16px;
         }
 
-        .glow-on-hover:before {
-            content: '';
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-            position: absolute;
-            top: -2px;
-            left:-2px;
-            background-size: 400%;
-            z-index: -1;
-            filter: blur(5px);
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            animation: glowing 20s linear infinite;
-            opacity: 0;
-            transition: opacity .3s ease-in-out;
-            border-radius: 10px;
+        .back-btn:hover {
+            background-color: #b91c1c;
         }
 
-        .glow-on-hover:active {
-            color: #000
-        }
-
-        .glow-on-hover:active:after {
-            background: transparent;
-        }
-
-        .glow-on-hover:hover:before {
-            opacity: 1;
-        }
-
-        .glow-on-hover:after {
-            z-index: -1;
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #111;
-            left: 0;
-            top: 0;
-            border-radius: 10px;
-        }
-
-        @keyframes glowing {
-            0% { background-position: 0 0; }
-            50% { background-position: 400% 0; }
-            100% { background-position: 0 0; }
+        @media (max-width: 768px) {
+            .back-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="main_href" >
-        <button onclick="document.location='test-main.php'" class="glow-on-hover" type="button">назад</button>
+    <div class="main_href">
+        <a href="test-main.php" class="back-btn">Назад</a>
     </div>
     
     <div class="form-container">
